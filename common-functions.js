@@ -12,6 +12,7 @@ function initialize() {
 
 var active_layers = []; // keep
 var cameraMarkers = [];
+var cameraInfoWindows = [];
 
 function addLayer(options, map) {
     active_layers[options['name']] = new google.maps.KmlLayer(options['feed']);
@@ -44,10 +45,16 @@ function addPennDOTCameras(map) {
             marker.setMap(map);
             cameraMarkers.push(marker);
             google.maps.event.addListener(marker, 'click', function() {
-              var infowindow = new google.maps.InfoWindow({
+                var j;
+                var lenJ;
+                for (j = 0, lenJ = cameraInfoWindows.length; j < lenJ; j += 1) {
+                    cameraInfoWindows[j].close();
+                }
+                var infowindow = new google.maps.InfoWindow({
                   content: '<h3>' + camera.name + '</h3><img src="' + camera.url + '" />'
-              });
-              infowindow.open(map, marker);
+                });
+                cameraInfoWindows.push(infowindow);
+                infowindow.open(map, marker);
             });
         });
     }

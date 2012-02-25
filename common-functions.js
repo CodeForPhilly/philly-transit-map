@@ -51,7 +51,7 @@ function addPennDOTCameras(map) {
                     cameraInfoWindows[j].close();
                 }
                 var infowindow = new google.maps.InfoWindow({
-                  content: '<h3>' + camera.name + '</h3><img src="' + camera.url + '" />'
+                  content: '<div class="cameraInfoWindow"><h3>' + camera.name + '</h3><img src="' + camera.url + '" /></div>'
                 });
                 cameraInfoWindows.push(infowindow);
                 infowindow.open(map, marker);

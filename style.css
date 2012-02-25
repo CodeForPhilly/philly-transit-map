@@ -29,6 +29,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 
 }
 .sidebar ul{list-style-type:none; padding:0; margin:10px;}
+.sidebar h3 {margin:10px 10px 0 10px;}
 .sidebar ul li a{ display:block;width:100%;}
 
 .header {height : 50px; background-color:#eee;}

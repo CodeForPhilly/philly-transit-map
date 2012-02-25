@@ -1,0 +1,18 @@
+html { height: 100% }
+body { height: 100%; width:100%; margin: 0; padding: 0 }
+
+.container {position:absolute; left : -200px; -webkit-transition: left 0.3s linear; overflow: hidden; height:100%; width:100%;}
+.container.open { left: 0px; -webkit-transition: left 0.3s linear;}
+.container .sidebar{position: fixed; float:left; width:200px; height: 100%; overflow-y: auto;}
+.container .header{position: fixed; left: 0px; top: 0px; width: 100%; -webkit-transition: left 0.3s linear;}
+.container.open .header {left: 200px;-webkit-transition: left 0.3s linear;}
+.container .contents{ position:fixed; left:0; width: 100%; height: 100%; overflow:auto; -webkit-transition: left 0.3s linear; }
+.container.open .contents {left:200px;}
+.sidebar {background:#ccc;}
+.sidebar ul{list-style-type:none;}
+.sidebar ul li a{ display:block;width:100%;}
+
+.header {height : 50px; background-color:#eee;}
+.contents {background: #aaa; margin-top:50px;}
+
+#map_canvas { height: 100%; width:100%;}

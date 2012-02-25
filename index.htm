@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <title>Google Maps</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmaeXDiApJauAYahSIqG4bTZqChI3mp7I&sensor=false"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="common-functions.js"></script>
+    <script type="text/javascript" src="dom-ready.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+    <ul>
+        <li><a href="#" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail">SEPTA Regional Rail</a></li>
+        <li><a href="#" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-trolley">SEPTA Trolleys</a></li>
+    </ul>
+    </div>
+    <div class="header">
+      <input id="toggle_sidebar" type="button" value="〓">
+    </div>
+    <div class="contents">
+      <div id="map_canvas"></div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
+
+

@@ -31,6 +31,8 @@ $(document).ready(function() {
     } else {
       if (options.name === "penndot-cameras") {
           removePennDOTCameras(map);
+      } else if (options.type === "points") {
+        removePointSet(options, map);
       } else {
           removeLayer(options, map);
       }

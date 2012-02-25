@@ -16,12 +16,15 @@ $(document).ready(function() {
   $('.sidebar input').live("change", function(){
     var options = {
         feed: $(this).attr("data-layer-url"),
-        name: $(this).attr("data-layer-name")
+        name: $(this).attr("data-layer-name"),
+        type: $(this).attr("data-layer-type")
     };
 
     if (this.checked) {
-      if (options.name === "penndot-cameras") {
+      if (options.type === "cameras") {
         addPennDOTCameras(map);
+      } else if (options.type === "points") {
+        addPointSet(options, map);
       } else {
         addLayer(options, map);
       }

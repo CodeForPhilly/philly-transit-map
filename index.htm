@@ -18,9 +18,11 @@
 <div class="container">
     <div class="sidebar">
     <ul>
-        <li><input type="checkbox" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail" /><label>SEPTA Regional Rail</label></li>
-        <li><input type="checkbox" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-trolley" /><label>SEPTA Trolleys</label></li>
-        <li><input type="checkbox" data-layer-url="" data-layer-name="penndot-cameras" /><label>PennDOT Cameras</label></li>
+        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail" /><label>SEPTA Regional Rail</label></li>
+        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-trolley" /><label>SEPTA Trolleys</label></li>
+        <li><input type="checkbox" data-layer-type="cameras" data-layer-url="" data-layer-name="penndot-cameras" /><label>PennDOT Cameras</label></li>
+        <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/pcs_locations" data-layer-name="phillycarshare-pods" /><label>PhillyCarShare Pods</label></li>
+        <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/zipcar_locations" data-layer-name="zipcar-pods" /><label>ZipCar Pods</label></li>
     </ul>
     </div>
     <div class="header">

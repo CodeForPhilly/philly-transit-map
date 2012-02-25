@@ -10,7 +10,7 @@ $(document).ready(function() {
       container.removeClass('open');
       $("#map_canvas").css({height:$(".contents").height()}).css({width:$(".contents").width()});
     });
-    
+
   $('.sidebar input').checked = false;
 
   $('.sidebar input').live("change", function(){
@@ -20,7 +20,11 @@ $(document).ready(function() {
     };
 
     if (this.checked) {
-      addLayer(options, map);
+      if (options.name === "penndot-cameras") {
+        addPennDOTCameras(map);
+      } else {
+        addLayer(options, map);
+      }
     } else {
       removeLayer(options, map);
     }

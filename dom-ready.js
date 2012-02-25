@@ -29,7 +29,11 @@ $(document).ready(function() {
         addLayer(options, map);
       }
     } else {
-      removeLayer(options, map);
+      if (options.name === "penndot-cameras") {
+          removePennDOTCameras(map);
+      } else {
+          removeLayer(options, map);
+      }
     }
 
   })

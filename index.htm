@@ -3,85 +3,73 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-
     <title>Google Maps</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmaeXDiApJauAYahSIqG4bTZqChI3mp7I&sensor=false"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmaeXDiApJauAYahSIqG4bTZqChI3mp7I&sensor=false"></script>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="common-functions.js"></script>
     <script type="text/javascript" src="dom-ready.js"></script>
-
 </head>
 <body>
-
 <div class="container">
     <div class="sidebar">
+        <h3>Philadelphia Bike Network</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeNetwork.kml" data-layer-name="bike-network" /><label>Bike Network</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeRacks201201.kml" data-layer-name="bike-racks" /><label>Bike Racks</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/trails.kml" data-layer-name="regional-bike-trails" /><label>Regional Bike Trails</label></li>
+        </ul>
 
-    <h3>Philadelphia Bike Network</h3>
-<ul>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeNetwork.kml" data-layer-name="bike-network" /><label>Bike Network</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeRacks201201.kml" data-layer-name="bike-racks" /><label>Bike Racks</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/trails.kml" data-layer-name="regional-bike-trails" /><label>Regional Bike Trails</label></li>
-</ul>
-<h3>SEPTA</h3>
-<ul>
-        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail" /><label>SEPTA Regional Rail</label></li>
-        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-trolley" /><label>SEPTA Trolleys</label></li>
-    </ul>
+        <h3>SEPTA</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail" /><label>SEPTA Regional Rail</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-trolley" /><label>SEPTA Trolleys</label></li>
+        </ul>
 
-    <h3>Car Sharing</h3>
-    <ul>
-        <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/pcs_locations" data-layer-name="phillycarshare-pods" /><label>PhillyCarShare Pods</label></li>
-        <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/zipcar_locations" data-layer-name="zipcar-pods" /><label>ZipCar Pods</label></li>
-    </ul>
+        <h3>Car Sharing</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/pcs_locations" data-layer-name="phillycarshare-pods" /><label>PhillyCarShare Pods</label></li>
+            <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/zipcar_locations" data-layer-name="zipcar-pods" /><label>ZipCar Pods</label></li>
+        </ul>
 
-<h3>PennDOT</h3>
-<ul>
-    <li><input type="checkbox" data-layer-url="" data-layer-name="penndot-cameras" /><label>PennDOT Cameras</label></li>
-</ul>
-<h3>AMTRAK</h3>
-<ul>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/necorridor.kml" data-layer-name="amtrak-northeast-corridor" /><label> Northeast Corridor</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/keystone.kml" data-layer-name="amtrak-keystone-corridor" /><label>Amtrak's Keystone Corridor</label></li>
-</ul>
+        <h3>PennDOT</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-url="" data-layer-name="penndot-cameras" /><label>PennDOT Cameras</label></li>
+        </ul>
 
-<h3>PATCO / NJT AC Line</h3>
-<ul>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/atlanticcityandpatco.kml" data-layer-name="patco-nj-transit-ac-line" /><label>PATCO and NJ Transit Atlantic City Line</label></li>
-</ul>
+        <h3>AMTRAK</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/necorridor.kml" data-layer-name="amtrak-northeast-corridor" /><label> Northeast Corridor</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/keystone.kml" data-layer-name="amtrak-keystone-corridor" /><label>Amtrak's Keystone Corridor</label></li>
+        </ul>
 
-<h3>New Jersey Transit</h3>
-<ul>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/SJTARiverline.kml" data-layer-name="sjta-riverline-schedule" /><label>SJTA Riverline (Schedule)</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT313.kml" data-layer-name="313-cape-may" /><label>313 Cape May - Wildwood - Philadelphia</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT315.kml" data-layer-name="315-cape-may" /><label>315 Cape May - Wildwood - Philadelphia</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT317.kml" data-layer-name="317-asbury" /><label>317 Asbury Park - Philadelphia</label></li>
-<li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT400.kml" data-layer-name="400-sicklerville" /><label>400 Sicklerville - Philadelphia</label></li>
-</ul>
+        <h3>PATCO / NJT AC Line</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/atlanticcityandpatco.kml" data-layer-name="patco-nj-transit-ac-line" /><label>PATCO and NJ Transit Atlantic City Line</label></li>
+        </ul>
 
-<h3>PHL Airport</h3>
+        <h3>New Jersey Transit</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/SJTARiverline.kml" data-layer-name="sjta-riverline-schedule" /><label>SJTA Riverline (Schedule)</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT313.kml" data-layer-name="313-cape-may" /><label>313 Cape May - Wildwood - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT315.kml" data-layer-name="315-cape-may" /><label>315 Cape May - Wildwood - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT317.kml" data-layer-name="317-asbury" /><label>317 Asbury Park - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT400.kml" data-layer-name="400-sicklerville" /><label>400 Sicklerville - Philadelphia</label></li>
+        </ul>
 
-<ul>
-<li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportTrackerUpdate.do?airportCode=PHL" data-layer-name="phl-realtime" /><label>Real-time Flights</label></li>
-
-<li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=1" data-layer-name="phl-arrivals" /><label>Arrivals</label></li>
-<li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=0" data-layer-name="phl-departures" /><label>Departures</label></li>
-
-</ul>
-    
-    </div>
+        <h3>PHL Airport</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportTrackerUpdate.do?airportCode=PHL" data-layer-name="phl-realtime" /><label>Real-time Flights</label></li>
+            <li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=1" data-layer-name="phl-arrivals" /><label>Arrivals</label></li>
+            <li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=0" data-layer-name="phl-departures" /><label>Departures</label></li>
+        </ul>
+    </div> <!-- end sidebar -->
     <div class="header">
-      <input id="toggle_sidebar" type="button" value="〓">
+        <input id="toggle_sidebar" type="button" value="〓">
     </div>
     <div class="contents">
-      <div id="map_canvas"></div>
+        <div id="map_canvas"></div>
     </div>
 </div>
-
-
 </body>
-
 </html>
-
-

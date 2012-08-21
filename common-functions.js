@@ -68,6 +68,8 @@ function removePennDOTCameras(map) {
     }
 }
 
+
+// mike z - followed this for adding cam dots
 function addPointSet(options, map) {
     active_layers[options.name] = active_layers[options.name] || [];
     if (active_layers[options.name].length === 0) {

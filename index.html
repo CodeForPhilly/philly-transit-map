@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Google Maps</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmaeXDiApJauAYahSIqG4bTZqChI3mp7I&sensor=false"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="common-functions.js"></script>
+    <script type="text/javascript" src="dom-ready.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h3>Philadelphia Bike Network</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeNetwork.kml" data-layer-name="bike-network" /><label>Bike Network</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.pasda.psu.edu/kml/CityPhilly/PhiladelphiaBikeRacks201201.kml" data-layer-name="bike-racks" /><label>Bike Racks</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/trails.kml" data-layer-name="regional-bike-trails" /><label>Regional Bike Trails</label></li>
+        </ul>
+
+        <h3>SEPTA</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www2.septa.org/mzdev/kml/regionalrail.kml" data-layer-name="septa-regional-rail" /><label>SEPTA Regional Rail</label></li>
+            <li class="extended-container">
+                <a href="javascript:void(0)">SEPTA Buses +</a>
+                <div class="extended hide">
+                    <ul>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/1.kml" data-layer-name="septa-bus-1 " /><label>Rt.  1</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/2.kml" data-layer-name="septa-bus-2 " /><label>Rt. 2</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/3.kml" data-layer-name="septa-bus-3 " /><label>Rt. 3</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/4.kml" data-layer-name="septa-bus-4 " /><label>Rt. 4</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/5.kml" data-layer-name="septa-bus-5 " /><label>Rt. 5</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/6.kml" data-layer-name="septa-bus-6 " /><label>Rt. 6</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/7.kml" data-layer-name="septa-bus-7 " /><label>Rt. 7</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/8.kml" data-layer-name="septa-bus-8 " /><label>Rt. 8</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/9.kml" data-layer-name="septa-bus-9 " /><label>Rt. 9</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/12.kml" data-layer-name="septa-bus-12 " /><label>Rt. 12</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/14.kml" data-layer-name="septa-bus-14 " /><label>Rt. 14</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/16.kml" data-layer-name="septa-bus-16 " /><label>Rt. 16</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/17.kml" data-layer-name="septa-bus-17 " /><label>Rt. 17</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/18.kml" data-layer-name="septa-bus-18 " /><label>Rt. 18</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/19.kml" data-layer-name="septa-bus-19 " /><label>Rt. 19</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/20.kml" data-layer-name="septa-bus-20 " /><label>Rt. 20</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/21.kml" data-layer-name="septa-bus-21 " /><label>Rt. 21</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/22.kml" data-layer-name="septa-bus-22 " /><label>Rt. 22</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/23.kml" data-layer-name="septa-bus-23 " /><label>Rt. 23</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/24.kml" data-layer-name="septa-bus-24 " /><label>Rt. 24</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/25.kml" data-layer-name="septa-bus-25 " /><label>Rt. 25</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/26.kml" data-layer-name="septa-bus-26 " /><label>Rt. 26</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/27.kml" data-layer-name="septa-bus-27 " /><label>Rt. 27</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/28.kml" data-layer-name="septa-bus-28 " /><label>Rt. 28</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/29.kml" data-layer-name="septa-bus-29 " /><label>Rt. 29</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/30.kml" data-layer-name="septa-bus-30 " /><label>Rt. 30</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/31.kml" data-layer-name="septa-bus-31 " /><label>Rt. 31</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/32.kml" data-layer-name="septa-bus-32 " /><label>Rt. 32</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/33.kml" data-layer-name="septa-bus-33 " /><label>Rt. 33</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/35.kml" data-layer-name="septa-bus-35 " /><label>Rt. 35</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/37.kml" data-layer-name="septa-bus-37 " /><label>Rt. 37</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/38.kml" data-layer-name="septa-bus-38 " /><label>Rt. 38</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/39.kml" data-layer-name="septa-bus-39 " /><label>Rt. 39</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/40.kml" data-layer-name="septa-bus-40 " /><label>Rt. 40</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/42.kml" data-layer-name="septa-bus-42 " /><label>Rt. 42</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/43.kml" data-layer-name="septa-bus-43 " /><label>Rt. 43</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/44.kml" data-layer-name="septa-bus-44 " /><label>Rt. 44</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/46.kml" data-layer-name="septa-bus-46 " /><label>Rt. 46</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/47.kml" data-layer-name="septa-bus-47 " /><label>Rt. 47</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/47m.kml" data-layer-name="septa-bus-47m " /><label>Rt. 47m</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/48.kml" data-layer-name="septa-bus-48 " /><label>Rt. 48</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/50.kml" data-layer-name="septa-bus-50 " /><label>Rt. 50</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/52.kml" data-layer-name="septa-bus-52 " /><label>Rt. 52</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/53.kml" data-layer-name="septa-bus-53 " /><label>Rt. 53</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/54.kml" data-layer-name="septa-bus-54 " /><label>Rt. 54</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/55.kml" data-layer-name="septa-bus-55 " /><label>Rt. 55</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/56.kml" data-layer-name="septa-bus-56 " /><label>Rt. 56</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/57.kml" data-layer-name="septa-bus-57 " /><label>Rt. 57</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/58.kml" data-layer-name="septa-bus-58 " /><label>Rt. 58</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/59.kml" data-layer-name="septa-bus-59 " /><label>Rt. 59</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/60.kml" data-layer-name="septa-bus-60 " /><label>Rt. 60</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/61.kml" data-layer-name="septa-bus-61 " /><label>Rt. 61</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/62.kml" data-layer-name="septa-bus-62 " /><label>Rt. 62</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/64.kml" data-layer-name="septa-bus-64 " /><label>Rt. 64</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/65.kml" data-layer-name="septa-bus-65 " /><label>Rt. 65</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/66.kml" data-layer-name="septa-bus-66 " /><label>Rt. 66</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/67.kml" data-layer-name="septa-bus-67 " /><label>Rt. 67</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/68.kml" data-layer-name="septa-bus-68 " /><label>Rt. 68</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/70.kml" data-layer-name="septa-bus-70 " /><label>Rt. 70</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/71.kml" data-layer-name="septa-bus-71 " /><label>Rt. 71</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/73.kml" data-layer-name="septa-bus-73 " /><label>Rt. 73</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/75.kml" data-layer-name="septa-bus-75 " /><label>Rt. 75</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/77.kml" data-layer-name="septa-bus-77 " /><label>Rt. 77</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/78.kml" data-layer-name="septa-bus-78 " /><label>Rt. 78</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/79.kml" data-layer-name="septa-bus-79 " /><label>Rt. 79</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/80.kml" data-layer-name="septa-bus-80 " /><label>Rt. 80</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/84.kml" data-layer-name="septa-bus-84 " /><label>Rt. 84</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/88.kml" data-layer-name="septa-bus-88 " /><label>Rt. 88</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/89.kml" data-layer-name="septa-bus-89 " /><label>Rt. 89</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/90.kml" data-layer-name="septa-bus-90 " /><label>Rt. 90</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/91.kml" data-layer-name="septa-bus-91 " /><label>Rt. 91</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/93.kml" data-layer-name="septa-bus-93 " /><label>Rt. 93</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/94.kml" data-layer-name="septa-bus-94 " /><label>Rt. 94</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/95.kml" data-layer-name="septa-bus-95 " /><label>Rt. 95</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/96.kml" data-layer-name="septa-bus-96 " /><label>Rt. 96</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/97.kml" data-layer-name="septa-bus-97 " /><label>Rt. 97</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/98.kml" data-layer-name="septa-bus-98 " /><label>Rt. 98</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/99.kml" data-layer-name="septa-bus-99 " /><label>Rt. 99</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/103.kml" data-layer-name="septa-bus-103 " /><label>Rt. 103</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/104.kml" data-layer-name="septa-bus-104 " /><label>Rt. 104</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/105.kml" data-layer-name="septa-bus-105 " /><label>Rt. 105</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/106.kml" data-layer-name="septa-bus-106 " /><label>Rt. 106</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/107.kml" data-layer-name="septa-bus-107 " /><label>Rt. 107</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/108.kml" data-layer-name="septa-bus-108 " /><label>Rt. 108</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/109.kml" data-layer-name="septa-bus-109 " /><label>Rt. 109</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/110.kml" data-layer-name="septa-bus-110 " /><label>Rt. 110</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/111.kml" data-layer-name="septa-bus-111 " /><label>Rt. 111</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/112.kml" data-layer-name="septa-bus-112 " /><label>Rt. 112</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/113.kml" data-layer-name="septa-bus-113 " /><label>Rt. 113</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/114.kml" data-layer-name="septa-bus-114 " /><label>Rt. 114</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/115.kml" data-layer-name="septa-bus-115 " /><label>Rt. 115</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/116.kml" data-layer-name="septa-bus-116 " /><label>Rt. 116</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/117.kml" data-layer-name="septa-bus-117 " /><label>Rt. 117</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/118.kml" data-layer-name="septa-bus-118 " /><label>Rt. 118</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/119.kml" data-layer-name="septa-bus-119 " /><label>Rt. 119</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/120.kml" data-layer-name="septa-bus-120 " /><label>Rt. 120</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/123.kml" data-layer-name="septa-bus-123 " /><label>Rt. 123</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/124.kml" data-layer-name="septa-bus-124 " /><label>Rt. 124</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/125.kml" data-layer-name="septa-bus-125 " /><label>Rt. 125</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/126.kml" data-layer-name="septa-bus-126 " /><label>Rt. 126</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/127.kml" data-layer-name="septa-bus-127 " /><label>Rt. 127</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/128.kml" data-layer-name="septa-bus-128 " /><label>Rt. 128</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/129.kml" data-layer-name="septa-bus-129 " /><label>Rt. 129</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/130.kml" data-layer-name="septa-bus-130 " /><label>Rt. 130</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/131.kml" data-layer-name="septa-bus-131 " /><label>Rt. 131</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/132.kml" data-layer-name="septa-bus-132 " /><label>Rt. 132</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/133.kml" data-layer-name="septa-bus-133 " /><label>Rt. 133</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/134.kml" data-layer-name="septa-bus-134 " /><label>Rt. 134</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/139.kml" data-layer-name="septa-bus-139 " /><label>Rt. 139</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/150.kml" data-layer-name="septa-bus-150 " /><label>Rt. 150</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/201.kml" data-layer-name="septa-bus-201 " /><label>Rt. 201</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/204.kml" data-layer-name="septa-bus-204 " /><label>Rt. 204</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/205.kml" data-layer-name="septa-bus-205 " /><label>Rt. 205</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/206.kml" data-layer-name="septa-bus-206 " /><label>Rt. 206</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/304.kml" data-layer-name="septa-bus-304 " /><label>Rt. 304</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/306.kml" data-layer-name="septa-bus-306 " /><label>Rt. 306</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/310.kml" data-layer-name="septa-bus-310 " /><label>Rt. 310</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/314.kml" data-layer-name="septa-bus-314 " /><label>Rt. 314</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/BSO.kml" data-layer-name="septa-bus-BSO " /><label>Rt. BSO</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/C.kml" data-layer-name="septa-bus-C " /><label>Rt. C</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/G.kml" data-layer-name="septa-bus-G " /><label>Rt. G</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/h.kml" data-layer-name="septa-bus-h " /><label>Rt. h</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/HXH.kml" data-layer-name="septa-bus-HXH " /><label>Rt. HXH</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/J.kml" data-layer-name="septa-bus-J " /><label>Rt. J</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/K.kml" data-layer-name="septa-bus-K " /><label>Rt. K</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/L.kml" data-layer-name="septa-bus-L " /><label>Rt. L</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/LUCY.kml" data-layer-name="septa-bus-LUCY " /><label>Rt. LUCY</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/MFO.kml" data-layer-name="septa-bus-MFO " /><label>Rt. MFO</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/R.kml" data-layer-name="septa-bus-R " /><label>Rt. R</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/xh.kml" data-layer-name="septa-bus-xh " /><label>Rt. xh</label></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="extended-container">
+                <a href="javascript:void(0)" data-toggle="septa-trolleys">SEPTA Trolleys +</a>
+                <div class="extended hide">
+                    <ul>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/10.kml" data-layer-name="septa-trolley-10 " /><label>Rt. 10</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/11.kml" data-layer-name="septa-trolley-11 " /><label>Rt. 11</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/13.kml" data-layer-name="septa-trolley-13 " /><label>Rt. 13</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/15.kml" data-layer-name="septa-trolley-15 " /><label>Rt. 15</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/34.kml" data-layer-name="septa-trolley-34 " /><label>Rt. 34</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/36.kml" data-layer-name="septa-trolley-36 " /><label>Rt. 36</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/92.kml" data-layer-name="septa-trolley-92 " /><label>Rt. 92</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/101.kml" data-layer-name="septa-trolley-101 " /><label>Rt. 101</label></li>
+                        <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www3.septa.org/transitview/kml/102.kml" data-layer-name="septa-trolley-102 " /><label>Rt. 102</label></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Car Sharing</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/pcs_locations" data-layer-name="phillycarshare-pods" /><label>PhillyCarShare Pods</label></li>
+            <li><input type="checkbox" data-layer-type="points" data-layer-url="http://carshare-api.herokuapp.com/zipcar_locations" data-layer-name="zipcar-pods" /><label>ZipCar Pods</label></li>
+        </ul>
+
+        <h3>PennDOT</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="points" data-layer-url="http://philly-transit-map.phpfogapp.com/penndot.php" data-layer-name="penndot_cameras" /><label>PennDOT Cameras</label></li>
+        </ul>
+
+        <h3>AMTRAK</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/necorridor.kml" data-layer-name="amtrak-northeast-corridor" /><label> Northeast Corridor</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/keystone.kml" data-layer-name="amtrak-keystone-corridor" /><label>Amtrak's Keystone Corridor</label></li>
+        </ul>
+
+        <h3>PATCO / NJT AC Line</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/atlanticcityandpatco.kml" data-layer-name="patco-nj-transit-ac-line" /><label>PATCO and NJ Transit Atlantic City Line</label></li>
+        </ul>
+
+        <h3>New Jersey Transit</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/SJTARiverline.kml" data-layer-name="sjta-riverline-schedule" /><label>SJTA Riverline (Schedule)</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT313.kml" data-layer-name="313-cape-may" /><label>313 Cape May - Wildwood - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT315.kml" data-layer-name="315-cape-may" /><label>315 Cape May - Wildwood - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT317.kml" data-layer-name="317-asbury" /><label>317 Asbury Park - Philadelphia</label></li>
+            <li><input type="checkbox" data-layer-type="kml" data-layer-url="http://www.phillymap.com/kml/NJT400.kml" data-layer-name="400-sicklerville" /><label>400 Sicklerville - Philadelphia</label></li>
+        </ul>
+
+        <h3>PHL Airport</h3>
+        <ul>
+            <li><input type="checkbox" data-layer-type="xml" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportTrackerUpdate.do?airportCode=PHL" data-layer-name="phl-realtime" /><label>Real-time Flights</label></li>
+            <li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=1" data-layer-name="phl-arrivals" /><label>Arrivals</label></li>
+            <li><input type="checkbox" data-layer-url="http://www.flightstats.com/go/AirportTracker/airportDeparturesArrivalsUpdate.do?airportCode=PHL&airportQueryType=0" data-layer-name="phl-departures" /><label>Departures</label></li>
+        </ul>
+    </div> <!-- end sidebar -->
+    <div class="header">
+        <input id="toggle_sidebar" type="button" value="〓">
+    </div>
+    <div class="contents">
+        <div id="map_canvas"></div>
+    </div>
+</div>
+</body>
+</html>
